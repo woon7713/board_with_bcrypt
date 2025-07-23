@@ -1,9 +1,9 @@
 package com.woon7713.board_with_bcrypt.controller;
 
 
-import com.woon7713.board_with_bcrypt.dto.PostDeleteRequestDto;
 import com.woon7713.board_with_bcrypt.dto.PostRequestDto;
 import com.woon7713.board_with_bcrypt.dto.PostResponseDto;
+import com.woon7713.board_with_bcrypt.dto.UserRequestDto;
 import com.woon7713.board_with_bcrypt.model.Post;
 import com.woon7713.board_with_bcrypt.service.PostService;
 import jakarta.validation.Valid;
@@ -49,7 +49,7 @@ public class PostController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id, @Valid @RequestBody PostDeleteRequestDto dto) {
+    public void delete(@PathVariable Long id, @Valid @RequestBody UserRequestDto dto) {
         postService.delete(id, dto);
     }
 
